@@ -13,8 +13,8 @@ def get_args():
     parser = argparse.ArgumentParser(description='convert and merge .npz files to hdf5')
     parser.add_argument('input_files', type=str, nargs='+')
     parser.add_argument('-o', '--output_file', type=str)
-    parser.add_argument('-H', '--half-height', type=float, default=7100)
-    parser.add_argument('-R', '--radius', type=float, default=3400)
+    parser.add_argument('-H', '--half-height', type=float, default=3287)
+    parser.add_argument('-R', '--radius', type=float, default=3240)
     args = parser.parse_args()
     return args
 

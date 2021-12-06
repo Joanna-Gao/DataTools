@@ -11,8 +11,8 @@ def get_args():
     parser = argparse.ArgumentParser(description='convert and merge .npz files to hdf5')
     parser.add_argument('input_files', type=str, nargs='+')
     parser.add_argument('-o', '--output_file', type=str)
-    parser.add_argument('-H', '--half-height', type=float, default=7100)
-    parser.add_argument('-R', '--radius', type=float, default=3400)
+    parser.add_argument('-H', '--half-height', type=float, default=3287)
+    parser.add_argument('-R', '--radius', type=float, default=3240)
     args = parser.parse_args()
     return args
 
@@ -114,7 +114,7 @@ if __name__ == '__main__':
     hit_offset_next_20 = 0
     hit_offset_3 = 0
     hit_offset_next_3 = 0
-    label_map = {22: 0, 11: 1, 13: 2}
+    label_map = {22: 0, 11: 1, 13: 2, 111: 3}
     for input_file in config.input_files:
         print(input_file, flush=True)
         npz_file = np.load(input_file, allow_pickle=True)
@@ -164,7 +164,7 @@ if __name__ == '__main__':
             gammas_above_threshold = (np.abs(pids) == 22) & (energies > 2)
             above_threshold = muons_above_threshold | electrons_above_threshold\
                 | gammas_above_threshold
-            outside_tank = (np.linalg.norm(stops[:,(0,2)], axis=2) > config.radius)\
+            outside_tank = (np.linalg.norm(stops[:,(0,2)], axis=1) > config.radius)\
                 | (np.abs(stops[:, 1]) > config.half_height)
             dset_veto[offset+i] = np.any(above_threshold & outside_tank)
             end_energy_estimate = energies - np.linalg.norm(stops - starts)*2

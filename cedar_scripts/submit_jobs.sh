@@ -10,7 +10,7 @@ cd $DATATOOLS/cedar_scripts
 source sourceme.sh
 
 # name and output data directory for this run
-name=IWCDmPMT_test
+name=HKHybrid_gamma_test
 data_dir=/project/rpp-blairt2k/machine_learning/data
 
 # Run setup scripts

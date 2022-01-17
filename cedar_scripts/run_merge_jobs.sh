@@ -11,7 +11,7 @@ cd $DATATOOLS/cedar_scripts
 # project name, input data directory and output file name for this run
 name=HKHybrid
 data_dir=/scratch/jgao/data/${name}/h5
-output_dir=/scratch/jgao/data
+output_dir=/scratch/jgao/data/${name}
 mkdir -p $output_dir
 
 log_dir="/scratch/jgao/log/h5"

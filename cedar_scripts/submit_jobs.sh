@@ -14,7 +14,8 @@ cd $DATATOOLS/cedar_scripts
 
 # name and output data directory for this run
 name=HKHybrid_gamma_test
-data_dir=/project/rpp-blairt2k/machine_learning/data
+# data_dir=/project/rpp-blairt2k/machine_learning/data
+data_dir=/scratch/jgao/data
 
 # Run setup scripts
 source setup_jobs.sh "$name" "$data_dir"

@@ -187,12 +187,12 @@ fi
 rm -f ${rootfile/.root/_flat.root}
 
 # Convert to npz format
-npzdir="${tmp_dir}/numpy/${directory}"
-[ ! -z "$logs" ] && logfile="${LOGDIR}/numpy/${fullname}.log"
-mkdir -p "${npzdir}"
-mkdir -p "$(dirname "${logfile}")"
-echo "[`date`] Converting to numpy file ${npzdir}/${filename}.npz log to ${logfile}"
-python "$DATATOOLS/root_utils/event_dump.py" "${rootfile}" -d "${npzdir}" &> "${logfile}"
+# npzdir="${tmp_dir}/numpy/${directory}"
+# [ ! -z "$logs" ] && logfile="${LOGDIR}/numpy/${fullname}.log"
+# mkdir -p "${npzdir}"
+# mkdir -p "$(dirname "${logfile}")"
+# echo "[`date`] Converting to numpy file ${npzdir}/${filename}.npz log to ${logfile}"
+# python "$DATATOOLS/root_utils/event_dump.py" "${rootfile}" -d "${npzdir}" &> "${logfile}"
 
 # Run fiTQun
 if [ ! -z "${runfiTQun}" ]; then

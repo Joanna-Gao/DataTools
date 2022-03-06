@@ -14,9 +14,9 @@
 
 ulimit -c 0
 
-#source /project/rpp-blairt2k/machine_learning/production_software/DataTools/\
-# cedar_scripts/sourceme.sh
-source /home/jgao/sourceme.sh
+name=HKHybrid
+data_dir=/project/rpp-blairt2k/machine_learning/data
+source "${data_dir}/${name}/sourceme.sh"
 
 virtualenv --no-download $SLURM_TMPDIR/env
 source $SLURM_TMPDIR/env/bin/activate

@@ -21,7 +21,7 @@ for var in "$@"; do
     echo "The current file is $file"
     npzdir="$(dirname "$file")"
     echo "The directory containing file is extracted, which is $npzdir"
-    # npzdir="${npzdir#"${long_data_dir}"}"
+    npzdir="${npzdir#"${long_data_dir}"}"
     echo "After deletion, the dir path is $npzdir"
     # npzdir="${data_dir}/${name}/numpy${npzdir}"
     npzdir="/scratch/jgao/data/HKHybrid${npzdir}"

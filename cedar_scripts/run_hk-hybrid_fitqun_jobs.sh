@@ -20,11 +20,11 @@ cd "$LOGDIR"
 params="${FITQUN_ROOT}/ParameterOverrideFiles/Official_HyperK_HybridmPMT.parameters.dat"
 
 # submit jobs with desired options
-for f in ${data_dir}/${name}/WCSim/mu-/*/*/*/*_0.root; do
+for f in ${data_dir}/${name}/WCSim/e-/*/*/*/*_0.root; do
   p=${f##*/WCSim/}
   p=${p%%/*}
   for i in {0..2700..300}; do 
-    JOBTIME=`date` sbatch --time=2-00:00:00 --mem=10G --array=200-299\
+    JOBTIME=`date` sbatch --time=1-12:00:00 --mem=10G --array=362-399\
      --job-name=fq${i}_${p} "/project/rpp-blairt2k/jgao/DataTools/cedar_scripts/runfiTQun.sh"\
      "$f" "fiTQun" ${params} $i 300 ${LOGDIR}
   done

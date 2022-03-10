@@ -19,7 +19,7 @@ mkdir -p $log_dir
 cd $log_dir
 
 # 0-999 root files for mu-, 0-999 root files for e- 
-for i in {0..999}; do
+for i in "4" "5" "8" "9" "591"; do
   # f="${data_dir}/${name}/WCSim/*/*/*/*/*_${i}[0-9].root"
   f="${data_dir}/${name}/WCSim/gamma/*/*/*/*_${i}.root"
   sbatch --time=3:0:0 --job-name=rc${f##*_} "${DATATOOLS}/cedar_scripts/make_hybrid_npz.sh" "$f"

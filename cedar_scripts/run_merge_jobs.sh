@@ -20,7 +20,7 @@ cd $log_dir
 
 # process all the h5 files
 # f="${data_dir}/*.hdf5"
-sbatch --time=3:0:0 --job-name=mergeh5_all \
+sbatch --time=5:0:0 --job-name=mergeh5_all \
   "${DATATOOLS}/cedar_scripts/merge_h5_script.sh" \
   "${output_dir}/all_w_gamma.hdf5" "${output_dir}/gamma.hdf5" "${output_dir}/all.hdf5" #"$f"
 

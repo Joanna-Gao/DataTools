@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --account=rpp-blairt2k
 #SBATCH --time=3:0:0
-#SBATCH --mem-per-cpu=16G
+#SBATCH --mem-per-cpu=32G
 #SBATCH --output=%x-%a.out
 #SBATCH --error=%x-%a.err
 #SBATCH --cpus-per-task=1

@@ -23,8 +23,8 @@ params="${FITQUN_ROOT}/ParameterOverrideFiles/Official_HyperK_HybridmPMT.paramet
 for f in ${data_dir}/${name}/WCSim/mu-/*/*/*/*_0.root; do
   p=${f##*/WCSim/}
   p=${p%%/*}
-  for i in "2700"; do 
-    JOBTIME=`date` sbatch --time=1-12:00:00 --mem=10G --array=8,11,13,72,94,95,102,142,145,178,191,220,242,251,256,260,275,287,293,298,327,334,357,381,382\
+  for i in "2100"; do 
+    JOBTIME=`date` sbatch --time=1-12:00:00 --mem=10G --array=15,47,51,92,101,111,130,136,224,259,265,269,296,318,323,325,360,365,382\
      --job-name=fq${i}_${p} "/project/rpp-blairt2k/jgao/DataTools/cedar_scripts/runfiTQun.sh"\
      "$f" "fiTQun" ${params} $i 300 ${LOGDIR}
   done

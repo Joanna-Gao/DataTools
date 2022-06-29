@@ -11,3 +11,11 @@ that much resources so can be performed on the login node. Do:
 After obtaining the one hdf5 file from all the data processing, you can
 generate indices used for machine learning training with 
 root_utils/Creat_indices_file.ipynb 
+
+
+=========== Archive of some commonly used commands ============
+-  To check if any files are missing in a fitqun folder: (first set BASENAME)
+for i in {0..399}; do for j in {0..2700..300}; do if [ ! -e "${BASENAME}_${i}_${j}.fiTQun.root" ]; then echo "${BASENAME}_${i}_${j}.fiTQun.root" ; fi; done ;done
+
+-  To check the size of the generated fitqun files: (first set BASENAME)
+for i in {0..399}; do for j in {0..2700..300}; do SIZE=$(stat -c%s "${BASENAME}_${i}_${j}.fiTQun.root"); if (( $SIZE < 220000 )); then echo "${BASENAME}_${i}_${j}.fiTQun.root"; fi; done; done

@@ -7,3 +7,4 @@
 *.err
 *.out
 *.hdf5
+root_utils/.ipynb_checkpoints/*

@@ -1,6 +1,7 @@
 from root_utils.root_file_utils import *
 import argparse
 import numpy as np
+import matplotlib.pyplot as plt
 
 ROOT.gROOT.SetBatch(True)
 
@@ -42,6 +43,8 @@ def geodump(input_file, output_file, hybrid_store_method):
 
     num_pmts_20 = geo.GetWCNumPMT(0)
     num_pmts_3  = geo.GetWCNumPMT(1)
+    print("Num of 20in PMTs: ", num_pmts_20, ". Num of 3in PMTs: ", num_pmts_3)
+    exit
 
     tube_no_20 = np.zeros(num_pmts_20, dtype=int)
     position_20 = np.zeros((num_pmts_20, 3))
@@ -51,6 +54,9 @@ def geodump(input_file, output_file, hybrid_store_method):
     mPMT_no = np.zeros(num_pmts_3, dtype=int)
     position_3 = np.zeros((num_pmts_3, 3))
     orientation_3 = np.zeros((num_pmts_3, 3))
+    # x_3 = np.zeros(num_pmts_3, dtype=float)
+    # y_3 = np.zeros(num_pmts_3, dtype=float)
+    # z_3 = np.zeros(num_pmts_3, dtype=float)
 
     for i in range(num_pmts_20):
         pmt = geo.GetPMT(i, 0)
@@ -65,6 +71,12 @@ def geodump(input_file, output_file, hybrid_store_method):
         mPMT_no[i] = pmt.GetmPMTNo()
         for j in range(3):
             position_3[i][j] = pmt.GetPosition(j)
+            # if j == 0:
+            #     x_3[i] = pmt.GetPosition(j)
+            # elif j == 1:
+            #     y_3[i] = pmt.GetPosition(j)
+            # else:
+            #     z_3[i] = pmt.GetPosition(j)
             orientation_3[i][j] = pmt.GetOrientation(j)
 
     # method 0

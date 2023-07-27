@@ -245,7 +245,7 @@ class WCSim:
         for t in range(self.ntrigger_3):
             self.get_trigger_3(t)
             for hit in self.trigger_3.GetCherenkovHits():
-                pmt_id = hit.GetmPMT_PMTId() - 1
+                pmt_id = hit.GetmPMT_PMTID() - 1
                 tracks_3 = set()
                 for j in range(hit.GetTotalPe(0), hit.GetTotalPe(0)+hit.GetTotalPe(1)):
                     pe = self.trigger_3.GetCherenkovHitTimes().At(j)

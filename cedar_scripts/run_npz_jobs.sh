@@ -18,10 +18,10 @@ mkdir -p $log_dir
 cd $log_dir
 
 # 0-999 root files for mu-, 0-999 root files for e- 
-for i in "524" "128"; do
+for i in "0"; do
   #echo $i "3 particles"
   echo $i "e-"
   # f="${data_dir}/${name}/WCSim/*/*/*/*/*_${i}[0-9].root"
   f="${data_dir}/${name}/WCSim/e-/*/*/*/*_${i}.root"
-  sbatch --time=5:0:0 --job-name=rc${f##*_} "${DATATOOLS}/cedar_scripts/make_hybrid_npz.sh" "$f"
+  sbatch --time=3:0:0 --job-name=rc${f##*_} "${DATATOOLS}/cedar_scripts/make_hybrid_npz.sh" "$f"
 done

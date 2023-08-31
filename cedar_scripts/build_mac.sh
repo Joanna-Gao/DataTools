@@ -27,7 +27,7 @@
 #for arg in "$@"; do
 #  echo $arg
 #done
-geom="nuPRISM_mPMT"
+geom="HyperK_HybridmPMT"
 daqfile="${WCSIMDIR}/macros/daq.mac"
 seed=${SLURM_ARRAY_TASK_ID}
 orient="y"
@@ -155,6 +155,7 @@ fi
 echo     "/run/verbose                           1"                      > "${file}"
 echo     "/tracking/verbose                      0"                      >> "${file}"
 echo     "/hits/verbose                          0"                      >> "${file}"
+echo     "/grdm/verbose                          0"                      >> "${file}"
 echo     "/random/setSeeds                       $seed $seed"            >> "${file}"
 echo     "/WCSim/random/seed                     $seed"                  >> "${file}"
 echo     "/WCSim/WCgeom                          $geom"                  >> "${file}"
@@ -166,6 +167,10 @@ if [ ! -z "${gad}" ]; then
     echo "/WCSim/DopedWater                      false"                  >> "${file}"
   fi
 fi
+# The following photo-coverages are hard-coded in, might add two options to 
+# enable customisation in the future (J. Gao Aug 2023)
+echo     "#/WCSim/SetPMTPercentCoverage          20.2150576375662"       >> "${file}"
+echo     "#/WCSim/SetPMTPercentCoverage2         10.1075288187831"       >> "${file}"
 echo     "/WCSim/Construct"                                              >> "${file}"
 echo     "/WCSim/PMTQEMethod                     SensitiveDetector_Only" >> "${file}"
 echo     "/WCSim/PMTCollEff                      on"                     >> "${file}"

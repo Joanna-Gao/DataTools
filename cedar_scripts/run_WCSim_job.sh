@@ -57,7 +57,7 @@ shift 2
 # Set default options
 data_dir="${data_dir}/${name}"
 seed=${SLURM_ARRAY_TASK_ID}
-geom="nuPRISM_mPMT"
+geom="HyperK_HybridmPMT"  # Options: HyperK_HybridmPMT or HyperK_HybridmPMT_WithOD
 darkrate=0.1
 daqfile="${WCSIMDIR}/macros/daq.mac"
 orient="y"

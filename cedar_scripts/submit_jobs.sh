@@ -6,7 +6,7 @@ set -e
 
 # initial environment setup
 # export DATATOOLS=/project/rpp-blairt2k/machine_learning/production_software/DataTools
-echo "Working ok"
+
 export DATATOOLS=/project/rpp-blairt2k/jgao/DataTools
 export PYTHONPATH=$DATATOOLS:$PYTHONPATH
 # source /project/rpp-blairt2k/jgao/sourceme.sh
@@ -18,7 +18,10 @@ name=WCSim_test
 data_dir=/scratch/jgao/data
 
 # Run setup scripts
-source setup_jobs.sh "$name" "$data_dir"
+#source setup_jobs.sh "$name" "$data_dir"
+source /scratch/jgao/data/WCSim_test/sourceme_2023-08-31_07-33-40.sh
+
+echo "run_WCSim_job.sh ${name} ${data_dir} [options]"
 
 # set directory where log files will be saved
 export LOGDIR="/scratch/$USER/log/$name/"

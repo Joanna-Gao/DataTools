@@ -169,8 +169,8 @@ if [ ! -z "${gad}" ]; then
 fi
 # The following photo-coverages are hard-coded in, might add two options to 
 # enable customisation in the future (J. Gao Aug 2023)
-echo     "#/WCSim/SetPMTPercentCoverage          20.2150576375662"       >> "${file}"
-echo     "#/WCSim/SetPMTPercentCoverage2         10.1075288187831"       >> "${file}"
+echo     "/WCSim/SetPMTPercentCoverage          20.2150576375662"       >> "${file}"
+echo     "/WCSim/SetPMTPercentCoverage2         10.1075288187831"       >> "${file}"
 echo     "/WCSim/Construct"                                              >> "${file}"
 echo     "/WCSim/PMTQEMethod                     SensitiveDetector_Only" >> "${file}"
 echo     "/WCSim/PMTCollEff                      on"                     >> "${file}"

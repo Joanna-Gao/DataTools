@@ -178,6 +178,7 @@ echo "[`date`] Creating mac file ${macfile}"
 echo "[`date`] Running WCSim on ${macfile} output to ${rootfile} log to ${logfile}"
 mkdir -p "$(dirname "${rootfile}")"
 mkdir -p "$(dirname "${logfile}")"
+echo ${G4WORKDIR}
 cd "${G4WORKDIR}"
 if [ -x "${G4WORKDIR}/WCSim" ]; then
   "${G4WORKDIR}/WCSim" "${macfile}" "${G4WORKDIR}/tuningNominal.mac" &> "${logfile}"
